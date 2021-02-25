@@ -1,0 +1,28 @@
+/* Media Queries */ 
+
+$mobile: 400px;
+$tab: 768px;
+$desktop: 1120px;
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;        
+    }    
+}
+@mixin tab {
+    @media (min-width: #{$tab}) {
+        @content;        
+    }    
+}
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;        
+    }    
+}
+
+/*Flexbox*/
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
