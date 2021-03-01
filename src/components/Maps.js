@@ -15,6 +15,11 @@ const collegeCoords = {
   lng: 80.219708
 };
 
+const options = {
+  // styles: mapStyles,
+  disableDefaultUI: true,
+  zoomControl: true,
+};
 
 const Maps = () => {
     
@@ -53,8 +58,12 @@ const Maps = () => {
             mapContainerStyle={containerStyle}
             center={collegeCoords}
             zoom={11}
-            
+            options = {options}
           >
+          <Marker
+            position={collegeCoords}
+          >
+          </Marker>
           </GoogleMap>
       ) : <></>
 }

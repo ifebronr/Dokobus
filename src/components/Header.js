@@ -1,7 +1,7 @@
 import {ReactComponent as HomeIcon} from './icons/bx-home.svg';
 import {ReactComponent as RequestIcon} from './icons/bx-location-plus.svg';
 import {ReactComponent as SearchIcon} from './icons/bx-search.svg';
-import {ReactComponent as FeedbackIcon} from './icons/bx-message-square-detail.svg';
+
 
 const Header = () => {
     
@@ -9,10 +9,9 @@ const Header = () => {
     return (  
     <header id="cd-header">
        <Nav>
-           <Navitem icon = {<HomeIcon/>}linkName = "Home" />
-           <Navitem icon = {<RequestIcon/>}linkName = "Request Stop" />
-           <Navitem icon = {<FeedbackIcon/>}linkName = "Feedback" />
-           <Navitem icon = {<SearchIcon/>}linkName = "Search" />
+           <Navitem icon = {<HomeIcon/>} linkName = "Home" />
+           <Navitem icon = {<RequestIcon/>} linkName = "Request Stops" />
+           <Navitem icon = {<SearchIcon/>} linkName = "Search" />
        </Nav>
        <Profile></Profile>
     </header>
@@ -32,13 +31,10 @@ const Nav = (props) => {
 const Navitem  = (props) => {
     return ( 
         <li>
-            <a href="/" className = "nav-link">
+            <a href="/" className = "nav-link" data-link-name = {props.linkName}>
                 <i className = "icon-btn">
                     {props.icon}
                 </i>
-                {/* <span>
-                    {props.linkName}
-                </span> */}
             </a>
         </li>
     );
