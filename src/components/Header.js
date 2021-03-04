@@ -1,51 +1,26 @@
 import {ReactComponent as HomeIcon} from './icons/bx-home.svg';
 import {ReactComponent as RequestIcon} from './icons/bx-location-plus.svg';
 import {ReactComponent as SearchIcon} from './icons/bx-search.svg';
+import Nav from './Nav'
+import Navitem from './Navitem'
+import IconBtn from './IconBtn'
+import Profile from './Profile'
 
-
-const Header = () => {
+const Header = ({id}) => {
     
 
     return (  
-    <header id="cd-header">
-       <Nav>
-           <Navitem icon = {<HomeIcon/>} linkName = "Home" />
-           <Navitem icon = {<RequestIcon/>} linkName = "Request Stops" />
-           <Navitem icon = {<SearchIcon/>} linkName = "Search" />
+    <header id ={id}>
+       <Nav id = "cd-nav">
+           <IconBtn icon = {<HomeIcon/>} linkName = "Home" />
+           <IconBtn icon = {<RequestIcon/>} linkName = "Request Stops" />
+           <IconBtn icon = {<SearchIcon/>} linkName = "Search" />
        </Nav>
-       <Profile></Profile>
+       <Profile />
     </header>
     );
 }
 
-const Nav = (props) => {
-    return ( 
-        <nav id="cd-nav">  
-            <ul id="cd-nav-items">
-                {props.children}
-            </ul>
-        </nav>
-     );
-}
-
-const Navitem  = (props) => {
-    return ( 
-        <li>
-            <a href="/" className = "nav-link" data-link-name = {props.linkName}>
-                <i className = "icon-btn">
-                    {props.icon}
-                </i>
-            </a>
-        </li>
-    );
-}
- 
-const Profile = (props) => {
-    return (
-        <div className = "profile"></div>
-      );
-}
- 
 
  
 export default Header;

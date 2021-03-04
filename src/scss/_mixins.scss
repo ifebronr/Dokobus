@@ -26,3 +26,7 @@ $desktop: 1120px;
     align-items: center;
     justify-content: center;
 }
+@mixin flex-vertical{
+    display: flex;
+    align-items: center;
+}
