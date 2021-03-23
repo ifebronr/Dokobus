@@ -109,7 +109,13 @@ a {
   border-radius: 50%;
   width: 42px;
   height: 42px;
-  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-btn svg {
+  fill: #333333;
 }
 
 .icon-btn:active svg {
@@ -176,6 +182,10 @@ a {
   grid-area: main;
   display: grid;
   grid-template-columns: 300px 1fr;
+}
+
+#adm-content {
+  padding: 16px;
 }
 
 #adm #side-nav {

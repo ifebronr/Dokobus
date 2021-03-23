@@ -1,7 +1,12 @@
 const BusRoute = () => {
+    
     return ( 
-        <h1>BusRoute</h1>
-     );
+        <div>
+            <h1>Bus Route</h1>
+            
+        </div>
+        
+    );
 }
  
 export default BusRoute;

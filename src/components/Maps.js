@@ -6,10 +6,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: '100%',
-  height: '100vh'
-};
+import firebase from "./firebase"
 const collegeCoords = {
   lat:  12.866628, 
   lng: 80.219708
@@ -21,14 +18,20 @@ const options = {
   zoomControl: true,
 };
 
-const Maps = () => {
+const Maps = ({height,width}) => {
     
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
+  const containerStyle = {
+    width: width,
+    height: height
+  };
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
+  const realtimeCoords = firebase.db.collection("coords").doc("bus1");
+ 
   const onMapClick = React.useCallback((e) => {
     setMarkers((current) => [
       ...current,

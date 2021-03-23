@@ -2,7 +2,6 @@ import {ReactComponent as HomeIcon} from './icons/bx-home.svg';
 import {ReactComponent as RequestIcon} from './icons/bx-location-plus.svg';
 import {ReactComponent as SearchIcon} from './icons/bx-search.svg';
 import Nav from './Nav'
-import Navitem from './Navitem'
 import IconBtn from './IconBtn'
 import Profile from './Profile'
 

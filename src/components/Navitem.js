@@ -1,14 +1,19 @@
-const Navitem  = ({icon, linkName,active}) => {
+import {Link,useRouteMatch} from 'react-router-dom'
+const Navitem  = ({to,icon, linkName}) => {
+    const match = useRouteMatch({
+        path: to,
+        exact:true,
+      });
     return ( 
         <li>
-            <a href="#" className = {`nav-link ${active ? "nav-link-active" :"" }`} data-link-name = {linkName}>
+            <Link to = {to} className = {`nav-link ${match ? "nav-link-active" :"" }`} data-link-name = {linkName}>
                 <i>
                     {icon}
                 </i>
                 <span>
                     {linkName}
                 </span>
-            </a>
+            </Link>
         </li>
     );
 }
